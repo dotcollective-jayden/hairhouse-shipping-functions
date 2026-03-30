@@ -1,0 +1,47 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "50.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": null
+        },
+        "deliveryGroups": [
+          {
+            "id": "gid://shopify/CartDeliveryGroup/1",
+            "deliveryOptions": [
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
+                "cost": {
+                  "amount": "9.95"
+                }
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
+                "cost": {
+                  "amount": "14.95"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": ["SHIPPING"]
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

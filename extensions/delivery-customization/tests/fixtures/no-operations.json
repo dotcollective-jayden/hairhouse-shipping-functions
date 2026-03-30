@@ -1,0 +1,45 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "deliveryCustomization": {
+        "metafield": null
+      },
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "123 Main St",
+              "provinceCode": "NSW"
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "product": {
+                    "hasDangerousGoodsTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard"
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

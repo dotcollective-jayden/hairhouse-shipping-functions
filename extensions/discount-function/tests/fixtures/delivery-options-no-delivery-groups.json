@@ -1,0 +1,25 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "50.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": null
+        },
+        "deliveryGroups": []
+      },
+      "discount": {
+        "discountClasses": ["SHIPPING"]
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "30.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": {
+            "isPlatinumMember": true
+          }
+        },
+        "deliveryGroups": [
+          {
+            "id": "gid://shopify/CartDeliveryGroup/1",
+            "deliveryOptions": [
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
+                "cost": {
+                  "amount": "9.95"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": ["SHIPPING"]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryDiscountsAdd": {
+            "candidates": [
+              {
+                "message": "Platinum Free Shipping 2-6 business days",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "standard-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              }
+            ],
+            "selectionStrategy": "ALL"
+          }
+        }
+      ]
+    }
+  }
+}

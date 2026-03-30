@@ -1,0 +1,51 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "deliveryCustomization": {
+        "metafield": null
+      },
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "PO Box 123",
+              "provinceCode": "NSW"
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "product": {
+                    "hasDangerousGoodsTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "rendr-handle",
+                "title": "3hr Delivery",
+                "code": "brauz-rendr-delivery"
+              },
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "rendr-handle"
+          }
+        }
+      ]
+    }
+  }
+}

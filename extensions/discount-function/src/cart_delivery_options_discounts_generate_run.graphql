@@ -1,0 +1,28 @@
+query DeliveryInput {
+  cart {
+    cost {
+      totalAmount {
+        amount
+      }
+    }
+    buyerIdentity {
+      customer {
+        isPlatinumMember: hasAnyTag(tags: ["Platinum Member"])
+      }
+    }
+    deliveryGroups {
+      id
+      deliveryOptions {
+        handle
+        title
+        code
+        cost {
+          amount
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+  }
+}

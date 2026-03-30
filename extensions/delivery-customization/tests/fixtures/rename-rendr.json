@@ -1,0 +1,69 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "deliveryCustomization": {
+        "metafield": null
+      },
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "123 Main St",
+              "provinceCode": "NSW"
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "product": {
+                    "hasDangerousGoodsTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "rendr-flex-handle",
+                "title": "Rendr Flexible",
+                "code": "brauz-rendr-delivery"
+              },
+              {
+                "handle": "rendr-fast-handle",
+                "title": "Rendr Fast",
+                "code": "brauz-rendr-delivery"
+              },
+              {
+                "handle": "rendr-delivery-fast-handle",
+                "title": "Rendr Delivery Fast",
+                "code": "brauz-rendr-delivery"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryOptionRename": {
+            "deliveryOptionHandle": "rendr-flex-handle",
+            "title": "3hr Delivery"
+          }
+        },
+        {
+          "deliveryOptionRename": {
+            "deliveryOptionHandle": "rendr-fast-handle",
+            "title": "3hr Delivery"
+          }
+        },
+        {
+          "deliveryOptionRename": {
+            "deliveryOptionHandle": "rendr-delivery-fast-handle",
+            "title": "3hr Delivery"
+          }
+        }
+      ]
+    }
+  }
+}

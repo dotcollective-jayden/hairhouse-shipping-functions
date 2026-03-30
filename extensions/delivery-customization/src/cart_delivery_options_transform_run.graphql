@@ -1,0 +1,29 @@
+query CartDeliveryOptionsTransformRunInput {
+  deliveryCustomization {
+    metafield(namespace: "$app:delivery-customization", key: "function-configuration") {
+      jsonValue
+    }
+  }
+  cart {
+    deliveryGroups {
+      deliveryAddress {
+        address1
+        provinceCode
+      }
+      cartLines {
+        merchandise {
+          ... on ProductVariant {
+            product {
+              hasDangerousGoodsTag: hasAnyTag(tags: ["Dangerous Goods"])
+            }
+          }
+        }
+      }
+      deliveryOptions {
+        handle
+        title
+        code
+      }
+    }
+  }
+}

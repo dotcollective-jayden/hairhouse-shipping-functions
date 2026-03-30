@@ -1,0 +1,62 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "80.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": null
+        },
+        "deliveryGroups": [
+          {
+            "id": "gid://shopify/CartDeliveryGroup/1",
+            "deliveryOptions": [
+              {
+                "handle": "rendr-handle",
+                "title": "3hr Delivery",
+                "code": "brauz-rendr-delivery",
+                "cost": {
+                  "amount": "10.99"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": ["SHIPPING"]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryDiscountsAdd": {
+            "candidates": [
+              {
+                "message": "If ordered before 2pm, next day if after 2pm",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "rendr-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "fixedAmount": {
+                    "amount": "1.00"
+                  }
+                }
+              }
+            ],
+            "selectionStrategy": "ALL"
+          }
+        }
+      ]
+    }
+  }
+}
