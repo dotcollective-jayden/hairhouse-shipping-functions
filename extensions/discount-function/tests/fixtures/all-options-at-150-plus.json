@@ -1,0 +1,105 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "200.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": null
+        },
+        "deliveryGroups": [
+          {
+            "id": "gid://shopify/CartDeliveryGroup/1",
+            "deliveryOptions": [
+              {
+                "handle": "rendr-handle",
+                "title": "3hr Delivery",
+                "code": "brauz-rendr-delivery",
+                "cost": {
+                  "amount": "13.74"
+                }
+              },
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
+                "cost": {
+                  "amount": "9.95"
+                }
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
+                "cost": {
+                  "amount": "14.95"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryDiscountsAdd": {
+            "candidates": [
+              {
+                "message": "If ordered before 2pm, next day if after 2pm",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "rendr-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "fixedAmount": {
+                    "amount": "3.75"
+                  }
+                }
+              },
+              {
+                "message": "Free Standard Shipping over $70",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "standard-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              },
+              {
+                "message": "Free Express Shipping Orders $150+",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "express-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              }
+            ],
+            "selectionStrategy": "ALL"
+          }
+        }
+      ]
+    }
+  }
+}

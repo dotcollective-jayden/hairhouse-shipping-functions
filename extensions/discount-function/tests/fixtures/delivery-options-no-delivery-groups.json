@@ -13,9 +13,6 @@
           "customer": null
         },
         "deliveryGroups": []
-      },
-      "discount": {
-        "discountClasses": ["SHIPPING"]
       }
     },
     "output": {

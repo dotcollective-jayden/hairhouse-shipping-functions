@@ -23,6 +23,22 @@
                 "cost": {
                   "amount": "10.99"
                 }
+              },
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
+                "cost": {
+                  "amount": "9.95"
+                }
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
+                "cost": {
+                  "amount": "14.95"
+                }
               }
             ]
           }
@@ -46,6 +62,36 @@
                 "value": {
                   "fixedAmount": {
                     "amount": "1.00"
+                  }
+                }
+              },
+              {
+                "message": "Free Standard Shipping over $70",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "standard-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              },
+              {
+                "message": "$5 Express Shipping for orders $70+",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "express-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "fixedAmount": {
+                    "amount": "9.95"
                   }
                 }
               }

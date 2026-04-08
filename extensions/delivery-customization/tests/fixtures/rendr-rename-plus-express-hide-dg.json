@@ -7,8 +7,8 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
-              "provinceCode": "NSW"
+              "address1": "42 Smith Street",
+              "provinceCode": "VIC"
             },
             "cartLines": [
               {
@@ -20,6 +20,11 @@
               }
             ],
             "deliveryOptions": [
+              {
+                "handle": "rendr-handle",
+                "title": "Rendr Flexible",
+                "code": "brauz-rendr-delivery"
+              },
               {
                 "handle": "express-handle",
                 "title": "Express Delivery",
@@ -37,6 +42,12 @@
     },
     "output": {
       "operations": [
+        {
+          "deliveryOptionRename": {
+            "deliveryOptionHandle": "rendr-handle",
+            "title": "3hr Delivery"
+          }
+        },
         {
           "deliveryOptionHide": {
             "deliveryOptionHandle": "express-handle"

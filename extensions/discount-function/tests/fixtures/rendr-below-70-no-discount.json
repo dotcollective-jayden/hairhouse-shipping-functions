@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "50.00"
           }
         },
         "buyerIdentity": {
@@ -30,30 +30,7 @@
       }
     },
     "output": {
-      "operations": [
-        {
-          "deliveryDiscountsAdd": {
-            "candidates": [
-              {
-                "message": "If ordered before 2pm, next day if after 2pm",
-                "targets": [
-                  {
-                    "deliveryOption": {
-                      "handle": "rendr-handle"
-                    }
-                  }
-                ],
-                "value": {
-                  "fixedAmount": {
-                    "amount": "1.00"
-                  }
-                }
-              }
-            ],
-            "selectionStrategy": "ALL"
-          }
-        }
-      ]
+      "operations": []
     }
   }
 }

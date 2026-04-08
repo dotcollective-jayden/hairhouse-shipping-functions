@@ -7,8 +7,8 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
-              "provinceCode": "NSW"
+              "address1": "100 Collins Street",
+              "provinceCode": "VIC"
             },
             "cartLines": [
               {
@@ -21,11 +21,6 @@
             ],
             "deliveryOptions": [
               {
-                "handle": "express-handle",
-                "title": "Express Delivery",
-                "code": "express"
-              },
-              {
                 "handle": "standard-handle",
                 "title": "Standard Delivery",
                 "code": "standard"
@@ -36,13 +31,7 @@
       }
     },
     "output": {
-      "operations": [
-        {
-          "deliveryOptionHide": {
-            "deliveryOptionHandle": "express-handle"
-          }
-        }
-      ]
+      "operations": []
     }
   }
 }

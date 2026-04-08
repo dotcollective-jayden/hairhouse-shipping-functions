@@ -7,7 +7,34 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
+              "address1": "42 Smith Street",
+              "provinceCode": "VIC"
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "product": {
+                    "hasDangerousGoodsTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "rendr-handle-1",
+                "title": "Rendr Flexible",
+                "code": "brauz-rendr-delivery"
+              },
+              {
+                "handle": "standard-handle-1",
+                "title": "Standard Delivery",
+                "code": "standard"
+              }
+            ]
+          },
+          {
+            "deliveryAddress": {
+              "address1": "PO Box 200",
               "provinceCode": "NSW"
             },
             "cartLines": [
@@ -21,19 +48,14 @@
             ],
             "deliveryOptions": [
               {
-                "handle": "rendr-flex-handle",
-                "title": "Rendr Flexible",
-                "code": "brauz-rendr-delivery"
-              },
-              {
-                "handle": "rendr-fast-handle",
+                "handle": "rendr-handle-2",
                 "title": "Rendr Fast",
                 "code": "brauz-rendr-delivery"
               },
               {
-                "handle": "rendr-delivery-fast-handle",
-                "title": "Rendr Delivery Fast",
-                "code": "brauz-rendr-delivery"
+                "handle": "standard-handle-2",
+                "title": "Standard Delivery",
+                "code": "standard"
               }
             ]
           }
@@ -44,20 +66,13 @@
       "operations": [
         {
           "deliveryOptionRename": {
-            "deliveryOptionHandle": "rendr-flex-handle",
+            "deliveryOptionHandle": "rendr-handle-1",
             "title": "3hr Delivery"
           }
         },
         {
-          "deliveryOptionRename": {
-            "deliveryOptionHandle": "rendr-fast-handle",
-            "title": "3hr Delivery"
-          }
-        },
-        {
-          "deliveryOptionRename": {
-            "deliveryOptionHandle": "rendr-delivery-fast-handle",
-            "title": "3hr Delivery"
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "rendr-handle-2"
           }
         }
       ]

@@ -7,7 +7,7 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
+              "address1": "Parcel Locker 10045678",
               "provinceCode": "NSW"
             },
             "cartLines": [
@@ -21,14 +21,14 @@
             ],
             "deliveryOptions": [
               {
-                "handle": "express-handle",
-                "title": "Express Delivery",
-                "code": "express"
-              },
-              {
                 "handle": "standard-handle",
                 "title": "Standard Delivery",
                 "code": "standard"
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express"
               }
             ]
           }
@@ -37,6 +37,11 @@
     },
     "output": {
       "operations": [
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "standard-handle"
+          }
+        },
         {
           "deliveryOptionHide": {
             "deliveryOptionHandle": "express-handle"

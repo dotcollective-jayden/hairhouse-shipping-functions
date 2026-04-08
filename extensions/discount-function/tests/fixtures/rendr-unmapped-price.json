@@ -21,7 +21,7 @@
                 "title": "3hr Delivery",
                 "code": "brauz-rendr-delivery",
                 "cost": {
-                  "amount": "10.99"
+                  "amount": "8.00"
                 }
               }
             ]
@@ -30,30 +30,7 @@
       }
     },
     "output": {
-      "operations": [
-        {
-          "deliveryDiscountsAdd": {
-            "candidates": [
-              {
-                "message": "If ordered before 2pm, next day if after 2pm",
-                "targets": [
-                  {
-                    "deliveryOption": {
-                      "handle": "rendr-handle"
-                    }
-                  }
-                ],
-                "value": {
-                  "fixedAmount": {
-                    "amount": "1.00"
-                  }
-                }
-              }
-            ],
-            "selectionStrategy": "ALL"
-          }
-        }
-      ]
+      "operations": []
     }
   }
 }

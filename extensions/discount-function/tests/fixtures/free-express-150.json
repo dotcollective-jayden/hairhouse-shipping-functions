@@ -27,9 +27,6 @@
             ]
           }
         ]
-      },
-      "discount": {
-        "discountClasses": ["SHIPPING"]
       }
     },
     "output": {

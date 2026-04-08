@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "50.00"
+            "amount": "69.99"
           }
         },
         "buyerIdentity": {
@@ -22,14 +22,6 @@
                 "code": "standard",
                 "cost": {
                   "amount": "9.95"
-                }
-              },
-              {
-                "handle": "express-handle",
-                "title": "Express Delivery",
-                "code": "express",
-                "cost": {
-                  "amount": "14.95"
                 }
               }
             ]

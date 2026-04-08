@@ -7,14 +7,28 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
+              "address1": "10 George Street",
               "provinceCode": "NSW"
             },
             "cartLines": [
               {
                 "merchandise": {
                   "product": {
+                    "hasDangerousGoodsTag": false
+                  }
+                }
+              },
+              {
+                "merchandise": {
+                  "product": {
                     "hasDangerousGoodsTag": true
+                  }
+                }
+              },
+              {
+                "merchandise": {
+                  "product": {
+                    "hasDangerousGoodsTag": false
                   }
                 }
               }

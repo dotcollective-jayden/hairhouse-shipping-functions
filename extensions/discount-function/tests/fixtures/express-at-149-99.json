@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "149.99"
           }
         },
         "buyerIdentity": {
@@ -17,11 +17,11 @@
             "id": "gid://shopify/CartDeliveryGroup/1",
             "deliveryOptions": [
               {
-                "handle": "rendr-handle",
-                "title": "3hr Delivery",
-                "code": "brauz-rendr-delivery",
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
                 "cost": {
-                  "amount": "10.99"
+                  "amount": "14.95"
                 }
               }
             ]
@@ -35,17 +35,17 @@
           "deliveryDiscountsAdd": {
             "candidates": [
               {
-                "message": "If ordered before 2pm, next day if after 2pm",
+                "message": "$5 Express Shipping for orders $70+",
                 "targets": [
                   {
                     "deliveryOption": {
-                      "handle": "rendr-handle"
+                      "handle": "express-handle"
                     }
                   }
                 ],
                 "value": {
                   "fixedAmount": {
-                    "amount": "1.00"
+                    "amount": "9.95"
                   }
                 }
               }

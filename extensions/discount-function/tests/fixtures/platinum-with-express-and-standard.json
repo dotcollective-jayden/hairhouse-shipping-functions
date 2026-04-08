@@ -6,11 +6,13 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "75.00"
+            "amount": "80.00"
           }
         },
         "buyerIdentity": {
-          "customer": null
+          "customer": {
+            "isPlatinumMember": true
+          }
         },
         "deliveryGroups": [
           {
@@ -22,6 +24,14 @@
                 "code": "standard",
                 "cost": {
                   "amount": "9.95"
+                }
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
+                "cost": {
+                  "amount": "14.95"
                 }
               }
             ]
@@ -35,7 +45,7 @@
           "deliveryDiscountsAdd": {
             "candidates": [
               {
-                "message": "Free Standard Shipping over $70",
+                "message": "Platinum Free Shipping 2-6 business days",
                 "targets": [
                   {
                     "deliveryOption": {
@@ -46,6 +56,21 @@
                 "value": {
                   "percentage": {
                     "value": "100"
+                  }
+                }
+              },
+              {
+                "message": "$5 Express Shipping for orders $70+",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "express-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "fixedAmount": {
+                    "amount": "9.95"
                   }
                 }
               }

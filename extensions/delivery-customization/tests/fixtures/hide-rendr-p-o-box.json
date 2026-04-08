@@ -7,23 +7,23 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
-              "provinceCode": "NSW"
+              "address1": "P.O. Box 42",
+              "provinceCode": "VIC"
             },
             "cartLines": [
               {
                 "merchandise": {
                   "product": {
-                    "hasDangerousGoodsTag": true
+                    "hasDangerousGoodsTag": false
                   }
                 }
               }
             ],
             "deliveryOptions": [
               {
-                "handle": "express-handle",
-                "title": "Express Delivery",
-                "code": "express"
+                "handle": "rendr-handle",
+                "title": "Rendr Flexible",
+                "code": "brauz-rendr-delivery"
               },
               {
                 "handle": "standard-handle",
@@ -39,7 +39,7 @@
       "operations": [
         {
           "deliveryOptionHide": {
-            "deliveryOptionHandle": "express-handle"
+            "deliveryOptionHandle": "rendr-handle"
           }
         }
       ]

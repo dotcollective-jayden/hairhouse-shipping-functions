@@ -7,8 +7,8 @@
         "deliveryGroups": [
           {
             "deliveryAddress": {
-              "address1": "123 Main St",
-              "provinceCode": "NSW"
+              "address1": "PO Box 999",
+              "provinceCode": "VIC"
             },
             "cartLines": [
               {
@@ -21,14 +21,19 @@
             ],
             "deliveryOptions": [
               {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard"
+              },
+              {
                 "handle": "express-handle",
                 "title": "Express Delivery",
                 "code": "express"
               },
               {
-                "handle": "standard-handle",
-                "title": "Standard Delivery",
-                "code": "standard"
+                "handle": "rendr-handle",
+                "title": "3hr Delivery",
+                "code": "brauz-rendr-delivery"
               }
             ]
           }
@@ -39,7 +44,17 @@
       "operations": [
         {
           "deliveryOptionHide": {
+            "deliveryOptionHandle": "standard-handle"
+          }
+        },
+        {
+          "deliveryOptionHide": {
             "deliveryOptionHandle": "express-handle"
+          }
+        },
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "rendr-handle"
           }
         }
       ]
