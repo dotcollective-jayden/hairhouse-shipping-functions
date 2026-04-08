@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "dc-mcp": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/dc-mcp@latest"],
+      "env": {
+        "DC_MCP_API_KEY": "${DC_MCP_API_KEY}"
+      }
+    },
+    "shopify-dev-mcp": {
+      "command": "npx",
+      "args": ["-y", "@shopify/dev-mcp@latest"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    }
+  }
+}
