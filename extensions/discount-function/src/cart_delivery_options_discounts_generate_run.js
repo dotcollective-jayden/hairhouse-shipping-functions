@@ -166,7 +166,7 @@ export function cartDeliveryOptionsDiscountsGenerateRun(input) {
       // Customers with the "Platinum Member" tag get 100% off Standard
       // Delivery regardless of cart amount.
       // ----------------------------------------------------------------
-      if (isPlatinumMember && title.includes("standard delivery")) {
+      if (isPlatinumMember && title === "standard delivery") {
         candidates.push({
           message: "Platinum Free Shipping 2-6 business days",
           targets: [{ deliveryOption: { handle: option.handle } }],
@@ -180,7 +180,7 @@ export function cartDeliveryOptionsDiscountsGenerateRun(input) {
       // $150+ → free (100% off)
       // $70–$149 → reduced to $5 (fixedAmount discount = price - $5)
       // ----------------------------------------------------------------
-      if (title.includes("express delivery")) {
+      if (title === "express delivery") {
         if (cartTotalDollars >= 150) {
           candidates.push({
             message: "Free Express Shipping Orders $150+",
@@ -204,7 +204,7 @@ export function cartDeliveryOptionsDiscountsGenerateRun(input) {
       // ----------------------------------------------------------------
       // Campaign 5: Free Standard Shipping for orders $70+
       // ----------------------------------------------------------------
-      if (title.includes("standard delivery") && cartTotalDollars >= 70) {
+      if (title === "standard delivery" && cartTotalDollars >= 70) {
         candidates.push({
           message: "Free Standard Shipping over $70",
           targets: [{ deliveryOption: { handle: option.handle } }],
