@@ -22,6 +22,14 @@ query DeliveryInput {
       }
     }
   }
+  shop {
+    localTime {
+      date
+    }
+    promoConfig: metafield(namespace: "$app:promo-config", key: "settings") {
+      jsonValue
+    }
+  }
   discount {
     discountClasses
   }
