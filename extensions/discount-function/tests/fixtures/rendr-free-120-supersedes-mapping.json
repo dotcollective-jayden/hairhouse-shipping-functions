@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "130.00"
           }
         },
         "buyerIdentity": {
@@ -28,16 +28,23 @@
           }
         ]
       },
-      "discount": {
-        "discountClasses": [
-          "SHIPPING"
-        ]
-      },
       "shop": {
         "localTime": {
           "date": "2026-07-10"
         },
-        "promoConfig": null
+        "promoConfig": {
+          "jsonValue": {
+            "rendr": {
+              "enabled": true,
+              "freeThreshold": 120
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
       }
     },
     "output": {
@@ -46,7 +53,7 @@
           "deliveryDiscountsAdd": {
             "candidates": [
               {
-                "message": "If ordered before 2pm, next day if after 2pm",
+                "message": "Free 3hr Delivery Orders $120+",
                 "targets": [
                   {
                     "deliveryOption": {
@@ -55,8 +62,8 @@
                   }
                 ],
                 "value": {
-                  "fixedAmount": {
-                    "amount": "1.00"
+                  "percentage": {
+                    "value": "100"
                   }
                 }
               }

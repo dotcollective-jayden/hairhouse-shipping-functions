@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "200.00"
           }
         },
         "buyerIdentity": {
@@ -28,43 +28,27 @@
           }
         ]
       },
-      "discount": {
-        "discountClasses": [
-          "SHIPPING"
-        ]
-      },
       "shop": {
         "localTime": {
           "date": "2026-07-10"
         },
-        "promoConfig": null
+        "promoConfig": {
+          "jsonValue": {
+            "express": {
+              "enabled": false,
+              "reducedEnabled": false
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
       }
     },
     "output": {
-      "operations": [
-        {
-          "deliveryDiscountsAdd": {
-            "candidates": [
-              {
-                "message": "$5 Express Shipping for orders $70+",
-                "targets": [
-                  {
-                    "deliveryOption": {
-                      "handle": "express-handle"
-                    }
-                  }
-                ],
-                "value": {
-                  "fixedAmount": {
-                    "amount": "7.00"
-                  }
-                }
-              }
-            ],
-            "selectionStrategy": "ALL"
-          }
-        }
-      ]
+      "operations": []
     }
   }
 }

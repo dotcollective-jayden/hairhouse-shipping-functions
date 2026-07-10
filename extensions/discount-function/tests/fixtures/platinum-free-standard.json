@@ -31,7 +31,15 @@
         ]
       },
       "discount": {
-        "discountClasses": ["SHIPPING"]
+        "discountClasses": [
+          "SHIPPING"
+        ]
+      },
+      "shop": {
+        "localTime": {
+          "date": "2026-07-10"
+        },
+        "promoConfig": null
       }
     },
     "output": {

@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "35.00"
           }
         },
         "buyerIdentity": {
@@ -17,27 +17,33 @@
             "id": "gid://shopify/CartDeliveryGroup/1",
             "deliveryOptions": [
               {
-                "handle": "rendr-handle",
-                "title": "3hr Delivery",
-                "code": "brauz-rendr-delivery",
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
                 "cost": {
-                  "amount": "10.99"
+                  "amount": "9.95"
                 }
               }
             ]
           }
         ]
       },
-      "discount": {
-        "discountClasses": [
-          "SHIPPING"
-        ]
-      },
       "shop": {
         "localTime": {
           "date": "2026-07-10"
         },
-        "promoConfig": null
+        "promoConfig": {
+          "jsonValue": {
+            "standard": {
+              "freeThreshold": 30
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
       }
     },
     "output": {
@@ -46,17 +52,17 @@
           "deliveryDiscountsAdd": {
             "candidates": [
               {
-                "message": "If ordered before 2pm, next day if after 2pm",
+                "message": "Free Standard Shipping over $30",
                 "targets": [
                   {
                     "deliveryOption": {
-                      "handle": "rendr-handle"
+                      "handle": "standard-handle"
                     }
                   }
                 ],
                 "value": {
-                  "fixedAmount": {
-                    "amount": "1.00"
+                  "percentage": {
+                    "value": "100"
                   }
                 }
               }

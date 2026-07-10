@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "80.00"
+            "amount": "100.00"
           }
         },
         "buyerIdentity": {
@@ -28,16 +28,23 @@
           }
         ]
       },
-      "discount": {
-        "discountClasses": [
-          "SHIPPING"
-        ]
-      },
       "shop": {
         "localTime": {
           "date": "2026-07-10"
         },
-        "promoConfig": null
+        "promoConfig": {
+          "jsonValue": {
+            "rendr": {
+              "enabled": true,
+              "freeThreshold": 120
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
       }
     },
     "output": {

@@ -6,7 +6,7 @@
       "cart": {
         "cost": {
           "totalAmount": {
-            "amount": "50.00"
+            "amount": "100.00"
           }
         },
         "buyerIdentity": {
@@ -23,29 +23,30 @@
                 "cost": {
                   "amount": "9.95"
                 }
-              },
-              {
-                "handle": "express-handle",
-                "title": "Express Delivery",
-                "code": "express",
-                "cost": {
-                  "amount": "14.95"
-                }
               }
             ]
           }
-        ]
-      },
-      "discount": {
-        "discountClasses": [
-          "SHIPPING"
         ]
       },
       "shop": {
         "localTime": {
           "date": "2026-07-10"
         },
-        "promoConfig": null
+        "promoConfig": {
+          "jsonValue": {
+            "standard": {
+              "freeThreshold": 30,
+              "schedule": {
+                "endsOn": "2026-06-30"
+              }
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
       }
     },
     "output": {

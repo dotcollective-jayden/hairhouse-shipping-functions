@@ -27,3 +27,13 @@ extensions/*/dist
 # Ignore shopify files created during app dev
 .shopify/*
 .shopify.lock
+
+# Playwright MCP screenshots
+.playwright-mcp/
+
+# Entire.io local settings
+.entire/settings.local.json
+
+# OS generated files
+Thumbs.db
+._*
