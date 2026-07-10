@@ -44,12 +44,15 @@ Handles four campaigns:
 
 **Target:** `cart.delivery-options.discounts.generate.run`
 
-Handles five campaigns:
-1. **Rendr cost mapping** - maps Rendr wholesale prices to Hairhouse customer prices (cart > $70)
-2. **Platinum Member** free standard shipping (customer tag "Platinum Member")
-3. **Free Express** for orders $150+
-4. **$5 Express** for orders $70-$149
-5. **Free Standard** for orders $70+
+Handles six campaigns:
+1. **Rendr cost mapping** - maps Rendr wholesale prices to Hairhouse customer prices (cart > $70). Baseline, not configurable.
+2. **Platinum Member** free standard shipping (customer tag "Platinum Member"). Baseline, not configurable.
+3. **Free Express** at/above a configurable threshold (default $150+)
+4. **Reduced Express** to a configurable price at/above a configurable threshold (default $5 / $70+)
+5. **Free Standard** at/above a configurable threshold (default $70+; `0` = no minimum)
+6. **Free 3hr Rendr** at/above a configurable threshold (default $120+). New promo, OFF by default.
+
+Campaigns 3-6 read their toggles, thresholds, and optional date-based schedule windows from a shop metafield (`$app:promo-config` / `settings`, type `json`), with a safe fallback to the defaults above. See README "Promo configuration" for the full shape. The team can toggle, re-threshold, and schedule promos without a code release.
 
 ---
 
@@ -126,5 +129,6 @@ Use `list_commands` or `list_skills` to discover all available commands.
 - **Dangerous Goods** products are identified by the `Dangerous Goods` product tag via `hasAnyTag`.
 - **Platinum Members** are identified by the `Platinum Member` customer tag via `hasAnyTag`.
 - The **Rendr rate mapping** (`RATE_MAPPING` in discount-function) must match Rendr's pricing spreadsheet. If Rendr changes their costs, only the map values need updating.
+- **Promo configuration** lives in the shop metafield `$app:promo-config` / `settings` (json), read by the discount function at checkout. Thresholds, toggles, and schedules are edited there (via the admin app or Shopify admin), not in code. The function falls back to hard-coded defaults that reproduce the previous live behaviour if the metafield is missing or malformed.
 - `cart.cost.totalAmount` is used as an approximation of the post-discount subtotal. It includes product/order-level discounts but not shipping discounts.
 - The `script.rb` file in the project root is the **legacy Ruby script** these functions were migrated from. It serves as a reference only.

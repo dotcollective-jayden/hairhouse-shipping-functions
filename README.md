@@ -21,13 +21,52 @@ Renames and hides delivery options at checkout:
 
 Applies shipping discount campaigns at checkout:
 
-1. **Rendr cost mapping** — Maps Rendr wholesale prices to Hairhouse customer prices (cart > $70, matched by rate code `brauz-rendr-delivery`)
-2. **Free Standard Shipping for Platinum Members** — 100% off Standard Delivery for customers tagged "Platinum Member"
-3. **Free Express Shipping $150+** — 100% off Express Delivery for orders $150+
-4. **$5 Express Shipping $70-$149** — Reduces Express Delivery to $5 for orders $70-$149
-5. **Free Standard Shipping $70+** — 100% off Standard Delivery for orders $70+
+1. **Rendr cost mapping** - Maps Rendr wholesale prices to Hairhouse customer prices (cart > $70, matched by rate code `brauz-rendr-delivery`). Baseline, not configurable.
+2. **Free Standard Shipping for Platinum Members** - 100% off Standard Delivery for customers tagged "Platinum Member". Baseline, not configurable.
+3. **Free Express Shipping** - 100% off Express Delivery at/above a configurable threshold (default $150+)
+4. **Reduced Express Shipping** - Reduces Express Delivery to a configurable price at/above a configurable threshold (default $5 for orders $70+)
+5. **Free Standard Shipping** - 100% off Standard Delivery at/above a configurable threshold (default $70+; `0` = no minimum)
+6. **Free 3hr Rendr Delivery** - 100% off Rendr at/above a configurable threshold (default $120+). New promo, OFF by default; supersedes the cost mapping when active.
 
 Cart thresholds use `cart.cost.totalAmount` (post product/order-level discounts) to approximate the legacy script's `ReducedCartAmountQualifier` behavior.
+
+## Promo configuration
+
+Campaigns 3-6 are driven by a shop metafield so the Hairhouse team can toggle promos, change spend thresholds, and schedule campaigns without a code release.
+
+- **Metafield:** namespace `$app:promo-config`, key `settings`, type `json` (app-owned, on the shop).
+- **Read path:** the discount function's input query reads `shop.metafield(...)` plus `shop.localTime.date`, so no code change is needed to adjust a promo - only the metafield value.
+- **Backward compatible:** if the metafield is absent, empty, or malformed, the function falls back to the defaults above, which reproduce the previous hard-coded behaviour exactly. Each field also falls back individually, so a partial config is safe.
+
+### Config shape
+
+```jsonc
+{
+  "express": {
+    "enabled": true,          // toggles the free Express promo
+    "freeThreshold": 150,      // dollars; free Express at/above this
+    "reducedEnabled": true,    // toggles the reduced-price Express promo
+    "reducedThreshold": 70,    // dollars; reduced price applies at/above this
+    "reducedPrice": 5,         // dollars; the reduced Express price
+    "schedule": { "startsOn": "2026-08-01", "endsOn": "2026-08-31" }
+  },
+  "standard": {
+    "enabled": true,
+    "freeThreshold": 70,       // dollars; 0 = free with no minimum spend
+    "schedule": null
+  },
+  "rendr": {
+    "enabled": false,          // Free 3hr Rendr promo; OFF by default
+    "freeThreshold": 120,
+    "schedule": null
+  }
+}
+```
+
+- **Toggles:** set `enabled` (or `reducedEnabled`) to `false` to switch a single promo off. Other promos, the Platinum rule, and the Rendr cost mapping are unaffected.
+- **Thresholds:** any non-negative number. Customer-facing messages update automatically to the configured amount.
+- **Scheduling (optional):** `schedule.startsOn` / `schedule.endsOn` are `YYYY-MM-DD` (store timezone). A promo is active when today is on/after `startsOn` and on/before `endsOn`. Omit `schedule` (or set `null`) for an always-on promo. A missing or malformed bound is treated as open-ended (fail open, never hides a promo unexpectedly).
+- **Legacy shape:** the original flat toggles `{ "freeExpress150": bool, "freeRendr120": bool }` are still honoured and map to `express.enabled` / `rendr.enabled`.
 
 ## Getting started
 
