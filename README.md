@@ -10,10 +10,10 @@ Shopify Functions that handle shipping delivery option customization and discoun
 
 Renames and hides delivery options at checkout:
 
-1. **Rename Rendr variants** — Renames Rendr carrier options (matched by rate code `brauz-rendr-delivery`) to "3hr Delivery"
-2. **Hide Rendr for PO Box / Parcel Locker** — Hides Rendr options when the shipping address is a PO Box, parcel locker, locked box/bag, etc.
-3. **Hide Express for Dangerous Goods** — Hides "Express Delivery" when any cart item is tagged "Dangerous Goods"
-4. **Hide ALL rates for Dangerous Goods + restricted address/TAS** — Hides all delivery options when cart has dangerous goods and address is PO Box, parcel locker, or in Tasmania
+1. **Rename Rendr variants** - Renames Rendr carrier options (matched by rate code `brauz-rendr-delivery`) to "3hr Delivery"
+2. **Hide Rendr for PO Box / Parcel Locker** - Hides Rendr options when the shipping address is a PO Box, parcel locker, locked box/bag, etc.
+3. **Hide Express for Dangerous Goods** - Hides "Express Delivery" when any cart item is tagged "Dangerous Goods"
+4. **Hide ALL rates for Dangerous Goods + restricted address/TAS** - Hides all delivery options when cart has dangerous goods and address is PO Box, parcel locker, or in Tasmania
 
 ### discount-function
 
