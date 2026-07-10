@@ -1,0 +1,129 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-discounts-generate-run",
+    "target": "cart.delivery-options.discounts.generate.run",
+    "input": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "130.00"
+          }
+        },
+        "buyerIdentity": {
+          "customer": null
+        },
+        "deliveryGroups": [
+          {
+            "id": "gid://shopify/CartDeliveryGroup/1",
+            "deliveryOptions": [
+              {
+                "handle": "standard-handle",
+                "title": "Standard Delivery",
+                "code": "standard",
+                "cost": {
+                  "amount": "9.95"
+                }
+              },
+              {
+                "handle": "express-handle",
+                "title": "Express Delivery",
+                "code": "express",
+                "cost": {
+                  "amount": "12.00"
+                }
+              },
+              {
+                "handle": "rendr-handle",
+                "title": "3hr Delivery",
+                "code": "brauz-rendr-delivery",
+                "cost": {
+                  "amount": "10.99"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "shop": {
+        "localTime": {
+          "date": "2026-07-10"
+        },
+        "promoConfig": {
+          "jsonValue": {
+            "express": {
+              "freeThreshold": 100
+            },
+            "standard": {
+              "freeThreshold": 50
+            },
+            "rendr": {
+              "enabled": true,
+              "freeThreshold": 120
+            }
+          }
+        }
+      },
+      "discount": {
+        "discountClasses": [
+          "SHIPPING"
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryDiscountsAdd": {
+            "candidates": [
+              {
+                "message": "Free Standard Shipping over $50",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "standard-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              },
+              {
+                "message": "Free Express Shipping Orders $100+",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "express-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              },
+              {
+                "message": "Free 3hr Delivery Orders $120+",
+                "targets": [
+                  {
+                    "deliveryOption": {
+                      "handle": "rendr-handle"
+                    }
+                  }
+                ],
+                "value": {
+                  "percentage": {
+                    "value": "100"
+                  }
+                }
+              }
+            ],
+            "selectionStrategy": "ALL"
+          }
+        }
+      ]
+    }
+  }
+}
